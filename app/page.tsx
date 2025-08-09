@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
+import Image from "next/image" // Import Image component
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -83,24 +84,28 @@ export default function OramaLanding() {
       description:
         "End-to-end production services encompassing conceptualization, pre-production planning, shooting, post-production editing, and final delivery.",
       icon: "🎬",
+      image: "/placeholder.svg?height=150&width=250",
     },
     {
       title: "Cost-Effective Solutions",
       description:
         "Streamlined processes that enable us to provide top-notch services without compromising quality, optimizing costs while delivering unparalleled results.",
       icon: "💰",
+      image: "/placeholder.svg?height=150&width=250",
     },
     {
       title: "Enhanced Brand Visibility",
       description:
         "Leveraging creative prowess and industry insights to elevate your brand's visibility through innovative production techniques and captivating storytelling.",
       icon: "📈",
+      image: "/placeholder.svg?height=150&width=250",
     },
     {
       title: "Customized Approach",
       description:
         "Tailor-made solutions that align with your brand's identity, values, and target audience, ensuring a personalized and impactful approach.",
       icon: "🎯",
+      image: "/placeholder.svg?height=150&width=250",
     },
   ]
 
@@ -237,6 +242,20 @@ export default function OramaLanding() {
               <div className="absolute top-20 sm:top-40 right-16 sm:right-32 w-24 sm:w-48 h-24 sm:h-48 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 blur-2xl sm:blur-3xl"></div>
               <div className="absolute bottom-16 sm:bottom-32 left-1/4 sm:left-1/3 w-20 sm:w-40 h-20 sm:h-40 rounded-full bg-gradient-to-r from-orange-500 to-red-500 blur-2xl sm:blur-3xl"></div>
             </motion.div>
+
+            {/* New Floating Elements - White */}
+            <motion.div
+              className={`absolute top-[5%] left-[10%] w-24 h-24 rounded-full blur-xl bg-white/20 border border-white/30 animate-float-1`}
+            ></motion.div>
+            <motion.div
+              className={`absolute bottom-[15%] right-[5%] w-32 h-32 rounded-full blur-xl bg-white/20 border border-white/30 animate-float-2`}
+            ></motion.div>
+            <motion.div
+              className={`absolute top-[30%] right-[20%] w-16 h-16 rounded-full blur-xl bg-white/20 border border-white/30 animate-float-3`}
+            ></motion.div>
+            <motion.div
+              className={`absolute bottom-[5%] left-[30%] w-20 h-20 rounded-full blur-xl bg-white/20 border border-white/30 animate-float-4`}
+            ></motion.div>
 
             <div className="container mx-auto px-4 sm:px-6 text-center relative z-10 pt-20 sm:pt-0">
               <motion.div
@@ -397,6 +416,16 @@ export default function OramaLanding() {
                     whileTap={{ scale: 0.98 }}
                     className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8"
                   >
+                    {/* Image Placeholder */}
+                    <div className="mb-6 rounded-lg overflow-hidden">
+                      <Image
+                        src={service.image || "/placeholder.svg"}
+                        alt={service.title}
+                        width={250}
+                        height={150}
+                        className="w-full h-auto object-cover rounded-lg"
+                      />
+                    </div>
                     <div className="text-3xl sm:text-4xl mb-4">{service.icon}</div>
                     <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">{service.title}</h3>
                     <p className="text-sm sm:text-base text-gray-400 leading-relaxed">{service.description}</p>
