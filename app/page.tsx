@@ -17,7 +17,6 @@ import {
   Camera,
   Sun,
   Moon,
-  Shuffle,
   Facebook,
   Linkedin,
 } from "lucide-react"
@@ -146,26 +145,6 @@ export default function OramaLanding() {
 
   const navigationItems = ["Home", "About", "Services", "Portfolio", "Gallery", "Contact"]
 
-  // Your Google Drive video links
-  const googleDriveVideoLinks = [
-    "https://drive.google.com/file/d/1Fczamy-D3zodbvFi6bnRjXKsZHqK6c-A/view?usp=drive_link",
-    "https://drive.google.com/file/d/1xuuRqCK5Jq_cjbxj3BJ3C62VvGpSZc3N/view?usp=drive_link",
-    "https://drive.google.com/file/d/1JLu3NYmz38rrps06GnwxaOi2-zjtqV4d/view?usp=drive_link",
-    "https://drive.google.com/file/d/1agQFL_CqJ2uFgj2SHSJHd2uwE4bQnCEw/view?usp=drive_link",
-    "https://drive.google.com/file/d/1nlBCCEQm-U5MWKrh-_Tusgwn2wpK4Z7m/view?usp=drive_link",
-    "https://drive.google.com/file/d/1XaiQBfiTWtEo24ljRUioJosQAW6cOq2y/view?usp=drive_link",
-    "https://drive.google.com/file/d/1OkP8-6DR4W4E-ckgnvUUyVMOi9RrOmRd/view?usp=drive_link",
-    "https://drive.google.com/file/d/1DgQOR0IXkbwuJUQZ02_wZ34gnVKuKgR6/view?usp=drive_link",
-    "https://drive.google.com/file/d/1-j4YvQ5_7dPdWogNakzNPpkDl_Gq0M3e/view?usp=drive_link",
-    "https://drive.google.com/file/d/1W1-OZnwvzlmxIm938V4UFD8iIu0kDGQP/view?usp=drive_link",
-  ]
-
-  const playRandomGoogleDriveVideo = () => {
-    const randomIndex = Math.floor(Math.random() * googleDriveVideoLinks.length)
-    const videoUrl = googleDriveVideoLinks[randomIndex]
-    window.open(videoUrl, "_blank") // Open in a new tab
-  }
-
   return (
     <div
       className={`min-h-screen transition-colors duration-500 ${isDarkMode ? "dark bg-black text-white" : "bg-white text-black"}`}
@@ -193,7 +172,7 @@ export default function OramaLanding() {
             transition={{ duration: 0.8, delay: 1 }}
             className="text-lg sm:text-xl text-gray-400 mb-8"
           >
-            Building Experiences...
+            "Vision You Need"
           </motion.p>
           <motion.div
             initial={{ width: 0 }}
@@ -587,29 +566,6 @@ export default function OramaLanding() {
                   </motion.div>
                 ))}
               </div>
-
-              {/* New Play Random Work Button */}
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                viewport={{ once: true }}
-                className="text-center mt-16"
-              >
-                <h3 className="text-2xl sm:text-3xl font-bold mb-6">Want to see more?</h3>
-                <Button
-                  onClick={playRandomGoogleDriveVideo}
-                  size={isMobile ? "default" : "lg"}
-                  className="relative overflow-hidden bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 text-base sm:text-lg px-8 sm:px-10 py-4 sm:py-7 rounded-full font-semibold shadow-lg transition-all duration-300 group"
-                >
-                  <span className="relative z-10 flex items-center justify-center">
-                    <Shuffle className="w-5 h-5 mr-3 group-hover:rotate-180 transition-transform duration-500" />
-                    Play Random Work
-                  </span>
-                  <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
-                </Button>
-                <p className="text-sm text-gray-500 mt-4">(This will open the video in a new tab via Google Drive)</p>
-              </motion.div>
             </div>
           </section>
 
