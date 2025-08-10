@@ -109,17 +109,17 @@ export default function OramaLanding() {
     },
   ]
 
-  const galleryImages = [
-    { src: "/images/o1.png", alt: "Man in black and white, artistic pose" },
-    { src: "/images/o2.png", alt: "Man in black and white, standing in doorway" },
-    { src: "/images/o3.png", alt: "Man in black and white, thoughtful pose with cigarette" },
-    { src: "/images/o4.png", alt: "Man with reflective sunglasses, sepia tone" },
-    { src: "/images/o5.png", alt: "Man in patterned jacket, urban setting" },
-    { src: "/images/o6.png", alt: "Couple in white, cinematic outdoor shot" },
-    { src: "/images/o7.png", alt: "Close-up portrait of a woman with curly hair" },
-    { src: "/images/o8.png", alt: "Woman in red with a large decorated hat" },
-    { src: "/images/o9.png", alt: "Man in black and white, sitting with cigarette" },
-  ]
+const galleryImages = [
+  { src: "/images/o1.png", alt: "Moody monochrome portrait with soft shadows" },
+  { src: "/images/o2.png", alt: "Black and white figure framed by a doorway" },
+  { src: "/images/o3.png", alt: "Candid monochrome shot with a cigarette" },
+  { src: "/images/o4.png", alt: "Sepia-toned portrait with reflective sunglasses" },
+  { src: "/images/o5.png", alt: "Urban street-style shot in a patterned jacket" },
+  { src: "/images/o6.png", alt: "Romantic cinematic scene in white attire" },
+  { src: "/images/o7.png", alt: "Elegant close-up with natural curls" },
+  { src: "/images/o8.png", alt: "Striking portrait in red with an ornate hat" },
+  { src: "/images/o9.png", alt: "Black-and-white portrait in quiet contemplation" },
+];
 
   const navigationItems = ["Home", "About", "Services", "Portfolio", "Gallery", "Contact"]
 
