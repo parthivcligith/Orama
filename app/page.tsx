@@ -82,6 +82,34 @@ export default function OramaLanding() {
       image: "/images/o6.png",
     },
     {
+      title: "Ad Film Production",
+      description:
+        "Crafting compelling and high-impact advertising films that capture attention and drive brand engagement.",
+      icon: "🎥",
+      image: "/images/o11.png",
+    },
+    {
+      title: "Content Production",
+      description:
+        "Developing diverse content formats, from short-form videos to long-form documentaries, tailored to your narrative needs.",
+      icon: "✍️",
+      image: "/images/o12.png",
+    },
+    {
+      title: "E-commerce Photography",
+      description:
+        "High-quality product photography optimized for e-commerce platforms, ensuring your products look their best.",
+      icon: "🛍️",
+      image: "/images/o14.png",
+    },
+    {
+      title: "Print / Digital Photography",
+      description:
+        "Versatile photography services for both print and digital media, including editorial, lifestyle, and corporate shoots.",
+      icon: "📸",
+      image: "/images/o13.png",
+    },
+    {
       title: "Cost-Effective Solutions",
       description:
         "Streamlined processes that enable us to provide top-notch services without compromising quality, optimizing costs while delivering unparalleled results.",
@@ -165,7 +193,7 @@ export default function OramaLanding() {
             transition={{ duration: 0.8, delay: 1 }}
             className="text-lg sm:text-xl text-gray-400 mb-8"
           >
-            Vision You Need...
+            Building Experiences...
           </motion.p>
           <motion.div
             initial={{ width: 0 }}
@@ -352,7 +380,7 @@ export default function OramaLanding() {
                   transition={{ duration: 1, delay: 0.4 }}
                   className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light max-w-4xl mx-auto leading-relaxed px-4"
                 >
-                  We don't just create content — We Create The Vision You Need.
+                  We don't just create content — we build experiences.
                 </motion.p>
 
                 <motion.p
