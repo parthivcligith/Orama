@@ -165,7 +165,7 @@ export default function OramaLanding() {
             transition={{ duration: 0.8, delay: 1 }}
             className="text-lg sm:text-xl text-gray-400 mb-8"
           >
-            Building Experiences...
+            Vision You Need...
           </motion.p>
           <motion.div
             initial={{ width: 0 }}
