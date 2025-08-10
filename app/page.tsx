@@ -78,70 +78,62 @@ export default function OramaLanding() {
       description:
         "End-to-end production services encompassing conceptualization, pre-production planning, shooting, post-production editing, and final delivery.",
       icon: "🎬",
-      image: "/images/o6.png",
     },
     {
       title: "Ad Film Production",
       description:
         "Crafting compelling and high-impact advertising films that capture attention and drive brand engagement.",
       icon: "🎥",
-      image: "/images/o11.png",
     },
     {
       title: "Content Production",
       description:
         "Developing diverse content formats, from short-form videos to long-form documentaries, tailored to your narrative needs.",
       icon: "✍️",
-      image: "/images/o12.png",
     },
     {
       title: "E-commerce Photography",
       description:
         "High-quality product photography optimized for e-commerce platforms, ensuring your products look their best.",
       icon: "🛍️",
-      image: "/images/o14.png",
     },
     {
       title: "Print / Digital Photography",
       description:
         "Versatile photography services for both print and digital media, including editorial, lifestyle, and corporate shoots.",
       icon: "📸",
-      image: "/images/o13.png",
     },
     {
       title: "Cost-Effective Solutions",
       description:
         "Streamlined processes that enable us to provide top-notch services without compromising quality, optimizing costs while delivering unparalleled results.",
       icon: "💰",
-      image: "/images/o3.png",
     },
     {
       title: "Enhanced Brand Visibility",
       description:
         "Leveraging creative prowess and industry insights to elevate your brand's visibility through innovative production techniques and captivating storytelling.",
       icon: "📈",
-      image: "/images/o5.png",
     },
     {
       title: "Customized Approach",
       description:
         "Tailor-made solutions that align with your brand's identity, values, and target audience, ensuring a personalized and impactful approach.",
       icon: "🎯",
-      image: "/images/o7.png",
     },
   ]
 
-const galleryImages = [
-  { src: "/images/o1.png", alt: "Moody monochrome portrait with soft shadows" },
-  { src: "/images/o2.png", alt: "Black and white figure framed by a doorway" },
-  { src: "/images/o3.png", alt: "Candid monochrome shot with a cigarette" },
-  { src: "/images/o4.png", alt: "Sepia-toned portrait with reflective sunglasses" },
-  { src: "/images/o5.png", alt: "Urban street-style shot in a patterned jacket" },
-  { src: "/images/o6.png", alt: "Romantic cinematic scene in white attire" },
-  { src: "/images/o7.png", alt: "Elegant close-up with natural curls" },
-  { src: "/images/o8.png", alt: "Striking portrait in red with an ornate hat" },
-  { src: "/images/o9.png", alt: "Black-and-white portrait in quiet contemplation" },
-];
+  const galleryImages = [
+    { src: "/images/o1.png", alt: "Man in black and white, artistic pose" },
+    { src: "/images/o2.png", alt: "Man in black and white, standing in doorway" },
+    { src: "/images/o3.png", alt: "Man in black and white, thoughtful pose with cigarette" },
+    { src: "/images/o4.png", alt: "Man with reflective sunglasses, sepia tone" },
+    { src: "/images/o5.png", alt: "Man in patterned jacket, urban setting" },
+    { src: "/images/o6.png", alt: "Couple in white, cinematic outdoor shot" },
+    { src: "/images/o7.png", alt: "Close-up portrait of a woman with curly hair" },
+    { src: "/images/o8.png", alt: "Woman in red with a large decorated hat" },
+    { src: "/images/o9.png", alt: "Man in black and white, sitting with cigarette" },
+  ]
 
   const navigationItems = ["Home", "About", "Services", "Portfolio", "Gallery", "Contact"]
 
@@ -172,7 +164,7 @@ const galleryImages = [
             transition={{ duration: 0.8, delay: 1 }}
             className="text-lg sm:text-xl text-gray-400 mb-8"
           >
-            "Vision You Need"
+            Vision You Need
           </motion.p>
           <motion.div
             initial={{ width: 0 }}
@@ -496,15 +488,7 @@ const galleryImages = [
                     whileTap={{ scale: 0.98 }}
                     className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8"
                   >
-                    <div className="mb-6 rounded-lg overflow-hidden">
-                      <Image
-                        src={service.image || "/placeholder.svg"}
-                        alt={service.title}
-                        width={250}
-                        height={150}
-                        className="w-full h-auto object-cover rounded-lg"
-                      />
-                    </div>
+                    {/* Removed Image component */}
                     <div className="text-3xl sm:text-4xl mb-4">{service.icon}</div>
                     <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">{service.title}</h3>
                     <p className="text-sm sm:text-base text-gray-400 leading-relaxed">{service.description}</p>
