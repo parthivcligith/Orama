@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
-import Image from "next/image" // Import Image component
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -17,13 +17,16 @@ import {
   Camera,
   Sun,
   Moon,
+  Shuffle,
+  Facebook,
+  Linkedin,
 } from "lucide-react"
 
 export default function OramaLanding() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isDarkMode, setIsDarkMode] = useState(true)
   const [isMobile, setIsMobile] = useState(false)
-  const [isLoading, setIsLoading] = useState(true) // New state for preloader
+  const [isLoading, setIsLoading] = useState(true)
   const { scrollYProgress } = useScroll()
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
 
@@ -42,11 +45,10 @@ export default function OramaLanding() {
     return () => window.removeEventListener("resize", checkMobile)
   }, [])
 
-  // Preloader logic
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 3000) // Adjust preloader display time as needed
+    }, 3000)
     return () => clearTimeout(timer)
   }, [])
 
@@ -55,7 +57,6 @@ export default function OramaLanding() {
       name: "Sage",
       description:
         "Top quality services and hospitality and the doctors working within and the location of the establishment were clearly communicated within 2 short format videos. The clinic's brand story and identity were elevated.",
-      link: "https://www.instagram.com/reel/C8mTip2Saxi/?igsh=eTZ1YjhuYWlmdzB4",
       category: "Healthcare",
     },
     {
@@ -67,7 +68,6 @@ export default function OramaLanding() {
     {
       name: "Sleepy Head",
       description: "The client wanted to focus on one single element for story telling and it was crafted accordingly.",
-      link: "https://drive.google.com/file/d/1dj1EuZWd-Jqi9BdmwfzQqdMf59KJn_5f/view?usp=drivesdk",
       category: "Lifestyle",
     },
     {
@@ -84,41 +84,64 @@ export default function OramaLanding() {
       description:
         "End-to-end production services encompassing conceptualization, pre-production planning, shooting, post-production editing, and final delivery.",
       icon: "🎬",
-      image: "/placeholder.svg?height=150&width=250",
+      image: "/images/o6.png",
     },
     {
       title: "Cost-Effective Solutions",
       description:
         "Streamlined processes that enable us to provide top-notch services without compromising quality, optimizing costs while delivering unparalleled results.",
       icon: "💰",
-      image: "/placeholder.svg?height=150&width=250",
+      image: "/images/o3.png",
     },
     {
       title: "Enhanced Brand Visibility",
       description:
         "Leveraging creative prowess and industry insights to elevate your brand's visibility through innovative production techniques and captivating storytelling.",
       icon: "📈",
-      image: "/placeholder.svg?height=150&width=250",
+      image: "/images/o5.png",
     },
     {
       title: "Customized Approach",
       description:
         "Tailor-made solutions that align with your brand's identity, values, and target audience, ensuring a personalized and impactful approach.",
       icon: "🎯",
-      image: "/placeholder.svg?height=150&width=250",
+      image: "/images/o7.png",
     },
   ]
 
   const galleryImages = [
-    { src: "/placeholder.svg?height=400&width=600", alt: "Cinematic Film Production" },
-    { src: "/placeholder.svg?height=400&width=600", alt: "Creative Agency Branding" },
-    { src: "/placeholder.svg?height=400&width=600", alt: "Fashion Photography Studio" },
-    { src: "/placeholder.svg?height=400&width=600", alt: "Digital Marketing Strategy" },
-    { src: "/placeholder.svg?height=400&width=600", alt: "Corporate Video Production" },
-    { src: "/placeholder.svg?height=400&width=600", alt: "Product Photography Setup" },
+    { src: "/images/o1.png", alt: "Man in black and white, artistic pose" },
+    { src: "/images/o2.png", alt: "Man in black and white, standing in doorway" },
+    { src: "/images/o3.png", alt: "Man in black and white, thoughtful pose with cigarette" },
+    { src: "/images/o4.png", alt: "Man with reflective sunglasses, sepia tone" },
+    { src: "/images/o5.png", alt: "Man in patterned jacket, urban setting" },
+    { src: "/images/o6.png", alt: "Couple in white, cinematic outdoor shot" },
+    { src: "/images/o7.png", alt: "Close-up portrait of a woman with curly hair" },
+    { src: "/images/o8.png", alt: "Woman in red with a large decorated hat" },
+    { src: "/images/o9.png", alt: "Man in black and white, sitting with cigarette" },
   ]
 
   const navigationItems = ["Home", "About", "Services", "Portfolio", "Gallery", "Contact"]
+
+  // Your Google Drive video links
+  const googleDriveVideoLinks = [
+    "https://drive.google.com/file/d/1Fczamy-D3zodbvFi6bnRjXKsZHqK6c-A/view?usp=drive_link",
+    "https://drive.google.com/file/d/1xuuRqCK5Jq_cjbxj3BJ3C62VvGpSZc3N/view?usp=drive_link",
+    "https://drive.google.com/file/d/1JLu3NYmz38rrps06GnwxaOi2-zjtqV4d/view?usp=drive_link",
+    "https://drive.google.com/file/d/1agQFL_CqJ2uFgj2SHSJHd2uwE4bQnCEw/view?usp=drive_link",
+    "https://drive.google.com/file/d/1nlBCCEQm-U5MWKrh-_Tusgwn2wpK4Z7m/view?usp=drive_link",
+    "https://drive.google.com/file/d/1XaiQBfiTWtEo24ljRUioJosQAW6cOq2y/view?usp=drive_link",
+    "https://drive.google.com/file/d/1OkP8-6DR4W4E-ckgnvUUyVMOi9RrOmRd/view?usp=drive_link",
+    "https://drive.google.com/file/d/1DgQOR0IXkbwuJUQZ02_wZ34gnVKuKgR6/view?usp=drive_link",
+    "https://drive.google.com/file/d/1-j4YvQ5_7dPdWogNakzNPpkDl_Gq0M3e/view?usp=drive_link",
+    "https://drive.google.com/file/d/1W1-OZnwvzlmxIm938V4UFD8iIu0kDGQP/view?usp=drive_link",
+  ]
+
+  const playRandomGoogleDriveVideo = () => {
+    const randomIndex = Math.floor(Math.random() * googleDriveVideoLinks.length)
+    const videoUrl = googleDriveVideoLinks[randomIndex]
+    window.open(videoUrl, "_blank") // Open in a new tab
+  }
 
   return (
     <div
@@ -129,8 +152,8 @@ export default function OramaLanding() {
         <motion.div
           initial={{ opacity: 1 }}
           animate={{ opacity: 0 }}
-          transition={{ delay: 2.5, duration: 0.5 }} // Start fading out after 2.5s, complete in 0.5s
-          onAnimationComplete={() => setIsLoading(false)} // Remove from DOM after animation
+          transition={{ delay: 2.5, duration: 0.5 }}
+          onAnimationComplete={() => setIsLoading(false)}
           className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-black"
         >
           <motion.h1
@@ -167,7 +190,7 @@ export default function OramaLanding() {
           <motion.nav
             initial={{ y: -100 }}
             animate={{ y: 0 }}
-            className="fixed top-0 w-full z-50 backdrop-blur-md bg-black/20 border-b border-white/10"
+            className={`fixed top-0 w-full z-50 backdrop-blur-md ${isDarkMode ? "bg-black/20 border-b border-white/10" : "bg-white/20 border-b border-black/10"}`}
           >
             <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
               <div className="flex items-center justify-between">
@@ -181,8 +204,8 @@ export default function OramaLanding() {
                     <motion.a
                       key={item}
                       href={`#${item.toLowerCase()}`}
-                      whileHover={{ y: -2 }}
-                      className="text-sm font-medium hover:text-gray-300 transition-colors"
+                      whileHover={{ y: -2, color: isDarkMode ? "#a0a0a0" : "#333333" }}
+                      className={`text-sm font-medium transition-colors ${isDarkMode ? "text-white hover:text-gray-300" : "text-black hover:text-gray-700"}`}
                     >
                       {item}
                     </motion.a>
@@ -195,14 +218,14 @@ export default function OramaLanding() {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     onClick={() => setIsDarkMode(!isDarkMode)}
-                    className="p-2 rounded-full bg-white/10 backdrop-blur-sm"
+                    className={`p-2 rounded-full backdrop-blur-sm ${isDarkMode ? "bg-white/10" : "bg-black/10"}`}
                   >
                     {isDarkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
                   </motion.button>
 
                   {/* Mobile Menu Toggle */}
                   <motion.button
-                    className="md:hidden p-2 rounded-full bg-white/10 backdrop-blur-sm"
+                    className={`md:hidden p-2 rounded-full backdrop-blur-sm ${isDarkMode ? "bg-white/10" : "bg-black/10"}`}
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -220,7 +243,7 @@ export default function OramaLanding() {
                 height: isMenuOpen ? "auto" : 0,
               }}
               transition={{ duration: 0.3 }}
-              className="md:hidden bg-black/95 backdrop-blur-md border-t border-white/10 overflow-hidden"
+              className={`md:hidden backdrop-blur-md border-t overflow-hidden ${isDarkMode ? "bg-black/95 border-white/10" : "bg-white/95 border-black/10"}`}
             >
               <div className="container mx-auto px-4 py-4 space-y-4">
                 {navigationItems.map((item, index) => (
@@ -233,7 +256,7 @@ export default function OramaLanding() {
                       x: isMenuOpen ? 0 : -20,
                     }}
                     transition={{ delay: index * 0.1 }}
-                    className="block text-lg font-medium hover:text-gray-300 transition-colors py-2 border-b border-white/10 last:border-b-0"
+                    className={`block text-lg font-medium py-2 border-b last:border-b-0 ${isDarkMode ? "text-white hover:text-gray-300 border-white/10" : "text-black hover:text-gray-700 border-black/10"}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item}
@@ -425,7 +448,6 @@ export default function OramaLanding() {
                     whileTap={{ scale: 0.98 }}
                     className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8"
                   >
-                    {/* Image Placeholder */}
                     <div className="mb-6 rounded-lg overflow-hidden">
                       <Image
                         src={service.image || "/placeholder.svg"}
@@ -496,10 +518,33 @@ export default function OramaLanding() {
                   </motion.div>
                 ))}
               </div>
+
+              {/* New Play Random Work Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                viewport={{ once: true }}
+                className="text-center mt-16"
+              >
+                <h3 className="text-2xl sm:text-3xl font-bold mb-6">Want to see more?</h3>
+                <Button
+                  onClick={playRandomGoogleDriveVideo}
+                  size={isMobile ? "default" : "lg"}
+                  className="relative overflow-hidden bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 text-base sm:text-lg px-8 sm:px-10 py-4 sm:py-7 rounded-full font-semibold shadow-lg transition-all duration-300 group"
+                >
+                  <span className="relative z-10 flex items-center justify-center">
+                    <Shuffle className="w-5 h-5 mr-3 group-hover:rotate-180 transition-transform duration-500" />
+                    Play Random Work
+                  </span>
+                  <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></span>
+                </Button>
+                <p className="text-sm text-gray-500 mt-4">(This will open the video in a new tab via Google Drive)</p>
+              </motion.div>
             </div>
           </section>
 
-          {/* Gallery Section (New) */}
+          {/* Gallery Section */}
           <section id="gallery" className="py-16 sm:py-20 lg:py-32 bg-white/5">
             <div className="container mx-auto px-4 sm:px-6">
               <motion.div
@@ -644,11 +689,160 @@ export default function OramaLanding() {
           </div>
 
           {/* Footer */}
-          <footer className="py-6 sm:py-8 border-t border-white/10">
-            <div className="container mx-auto px-4 sm:px-6 text-center">
-              <p className="text-gray-400 text-sm sm:text-base">
-                © {new Date().getFullYear()} ÒRAMA Media. All rights reserved.
-              </p>
+          <footer className="py-16 sm:py-20 lg:py-24 bg-black border-t border-white/10">
+            <div className="container mx-auto px-4 sm:px-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-12 sm:gap-8 mb-12 sm:mb-16">
+                {/* Footer Logo & Description */}
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                  viewport={{ once: true }}
+                  className="md:col-span-1 text-center md:text-left"
+                >
+                  <h3 className="text-3xl sm:text-4xl font-bold tracking-wider mb-4">ÒRAMA</h3>
+                  <p className="text-gray-400 text-sm sm:text-base leading-relaxed mb-4">
+                    Creative Agency & Film Production House. We don't just create content — we build experiences.
+                  </p>
+                  <div className="flex justify-center md:justify-start space-x-4 mt-6">
+                    <motion.a
+                      href="https://www.instagram.com/oramamedia/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.2, color: "#E1306C" }}
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
+                      <Instagram className="w-6 h-6" />
+                    </motion.a>
+                    <motion.a
+                      href="https://www.facebook.com/oramamedia"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.2, color: "#1877F2" }}
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
+                      <Facebook className="w-6 h-6" />
+                    </motion.a>
+                    <motion.a
+                      href="https://www.linkedin.com/company/oramamedia/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.2, color: "#0A66C2" }}
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
+                      <Linkedin className="w-6 h-6" />
+                    </motion.a>
+                  </div>
+                </motion.div>
+
+                {/* Services Links */}
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.1 }}
+                  viewport={{ once: true }}
+                  className="text-center md:text-left"
+                >
+                  <h4 className="text-xl sm:text-2xl font-bold mb-6">Services</h4>
+                  <ul className="space-y-3 text-gray-400 text-sm sm:text-base">
+                    <li>
+                      <a href="#services" className="hover:text-white transition-colors">
+                        Film Production
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#services" className="hover:text-white transition-colors">
+                        Photography
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#services" className="hover:text-white transition-colors">
+                        Design & Branding
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#services" className="hover:text-white transition-colors">
+                        Digital Marketing
+                      </a>
+                    </li>
+                  </ul>
+                </motion.div>
+
+                {/* Company Links */}
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="text-center md:text-left"
+                >
+                  <h4 className="text-xl sm:text-2xl font-bold mb-6">Company</h4>
+                  <ul className="space-y-3 text-gray-400 text-sm sm:text-base">
+                    <li>
+                      <a href="#about" className="hover:text-white transition-colors">
+                        About Us
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#portfolio" className="hover:text-white transition-colors">
+                        Portfolio
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#process" className="hover:text-white transition-colors">
+                        Our Process
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#team" className="hover:text-white transition-colors">
+                        Team
+                      </a>
+                    </li>
+                  </ul>
+                </motion.div>
+
+                {/* Contact Info */}
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                  viewport={{ once: true }}
+                  className="text-center md:text-left"
+                >
+                  <h4 className="text-xl sm:text-2xl font-bold mb-6">Contact</h4>
+                  <ul className="space-y-3 text-gray-400 text-sm sm:text-base">
+                    <li>
+                      <a href="tel:9400422107" className="hover:text-white transition-colors">
+                        9400422107
+                      </a>
+                    </li>
+                    <li>
+                      <a href="tel:6282743623" className="hover:text-white transition-colors">
+                        6282743623
+                      </a>
+                    </li>
+                    <li>
+                      <a href="mailto:Oramamedia660@gmail.com" className="hover:text-white transition-colors">
+                        Oramamedia660@gmail.com
+                      </a>
+                    </li>
+                  </ul>
+                </motion.div>
+              </div>
+
+              {/* Bottom Copyright and Message */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left space-y-4 sm:space-y-0"
+              >
+                <p className="text-gray-500 text-sm sm:text-base">
+                  © {new Date().getFullYear()} ÒRAMA Media. All rights reserved.
+                </p>
+                <p className="text-gray-500 text-sm sm:text-base">Hope to work with you soon!</p>
+              </motion.div>
             </div>
           </footer>
         </>
