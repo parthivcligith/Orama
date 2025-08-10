@@ -352,7 +352,7 @@ export default function OramaLanding() {
                   transition={{ duration: 1, delay: 0.4 }}
                   className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-light max-w-4xl mx-auto leading-relaxed px-4"
                 >
-                  We don't just create content — we build experiences.
+                  We don't just create content — We Create The Vision You Need.
                 </motion.p>
 
                 <motion.p
