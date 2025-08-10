@@ -66,11 +66,6 @@ export default function OramaLanding() {
       category: "Education",
     },
     {
-      name: "Sleepy Head",
-      description: "The client wanted to focus on one single element for story telling and it was crafted accordingly.",
-      category: "Lifestyle",
-    },
-    {
       name: "Matha Garments",
       description:
         "One of the leading garment distributors in South India with a legacy over 38 years. We create content for all 3 major platforms, building around their manufacturing processes and founder story.",
@@ -109,17 +104,17 @@ export default function OramaLanding() {
     },
   ]
 
-const galleryImages = [
-  { src: "/images/o1.png", alt: "Moody monochrome portrait with soft shadows" },
-  { src: "/images/o2.png", alt: "Black and white figure framed by a doorway" },
-  { src: "/images/o3.png", alt: "Candid monochrome shot with a cigarette" },
-  { src: "/images/o4.png", alt: "Sepia-toned portrait with reflective sunglasses" },
-  { src: "/images/o5.png", alt: "Urban street-style shot in a patterned jacket" },
-  { src: "/images/o6.png", alt: "Romantic cinematic scene in white attire" },
-  { src: "/images/o7.png", alt: "Elegant close-up with natural curls" },
-  { src: "/images/o8.png", alt: "Striking portrait in red with an ornate hat" },
-  { src: "/images/o9.png", alt: "Black-and-white portrait in quiet contemplation" },
-];
+  const galleryImages = [
+    { src: "/images/o1.png", alt: "Man in black and white, artistic pose" },
+    { src: "/images/o2.png", alt: "Man in black and white, standing in doorway" },
+    { src: "/images/o3.png", alt: "Man in black and white, thoughtful pose with cigarette" },
+    { src: "/images/o4.png", alt: "Man with reflective sunglasses, sepia tone" },
+    { src: "/images/o5.png", alt: "Man in patterned jacket, urban setting" },
+    { src: "/images/o6.png", alt: "Couple in white, cinematic outdoor shot" },
+    { src: "/images/o7.png", alt: "Close-up portrait of a woman with curly hair" },
+    { src: "/images/o8.png", alt: "Woman in red with a large decorated hat" },
+    { src: "/images/o9.png", alt: "Man in black and white, sitting with cigarette" },
+  ]
 
   const navigationItems = ["Home", "About", "Services", "Portfolio", "Gallery", "Contact"]
 
@@ -275,6 +270,52 @@ const galleryImages = [
               <div className="absolute bottom-16 sm:bottom-32 left-1/4 sm:left-1/3 w-20 sm:w-40 h-20 sm:h-40 rounded-full bg-gradient-to-r from-orange-500 to-red-500 blur-2xl sm:blur-3xl"></div>
             </motion.div>
 
+            {/* New Gradient Lights */}
+            <motion.div
+              className="absolute top-[15%] left-[25%] w-48 h-48 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 blur-3xl opacity-20"
+              animate={{
+                x: ["-5%", "5%", "-5%"],
+                y: ["-5%", "5%", "-5%"],
+                scale: [1, 1.1, 1],
+                opacity: [0.2, 0.4, 0.2],
+              }}
+              transition={{
+                duration: 18,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
+              }}
+            ></motion.div>
+            <motion.div
+              className="absolute bottom-[10%] right-[20%] w-56 h-56 rounded-full bg-gradient-to-tl from-pink-500 to-red-600 blur-3xl opacity-20"
+              animate={{
+                x: ["5%", "-5%", "5%"],
+                y: ["5%", "-5%", "5%"],
+                scale: [1, 1.05, 1],
+                opacity: [0.2, 0.35, 0.2],
+              }}
+              transition={{
+                duration: 20,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
+                delay: 2,
+              }}
+            ></motion.div>
+            <motion.div
+              className="absolute top-[40%] left-[5%] w-40 h-40 rounded-full bg-gradient-to-tr from-green-400 to-cyan-500 blur-3xl opacity-15"
+              animate={{
+                x: ["-3%", "3%", "-3%"],
+                y: ["3%", "-3%", "3%"],
+                scale: [1, 1.15, 1],
+                opacity: [0.15, 0.3, 0.15],
+              }}
+              transition={{
+                duration: 16,
+                repeat: Number.POSITIVE_INFINITY,
+                ease: "easeInOut",
+                delay: 4,
+              }}
+            ></motion.div>
+
             {/* New Floating Elements - White */}
             <motion.div
               className={`absolute top-[5%] left-[10%] w-24 h-24 rounded-full blur-xl bg-white/20 border border-white/30 animate-float-1`}
@@ -344,7 +385,7 @@ const galleryImages = [
                   className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mt-12 sm:mt-16 max-w-4xl mx-auto px-4"
                 >
                   {[
-                    { number: "50+", label: "PROJECTS" },
+                    { number: "10+", label: "CLIENTS" },
                     { number: "100%", label: "SATISFACTION" },
                     { number: "24/7", label: "SUPPORT" },
                   ].map((stat, index) => (

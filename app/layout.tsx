@@ -9,7 +9,6 @@ export const metadata: Metadata = {
   title: "ÒRAMA - Creative Agency & Film Production House",
   description:
     "We don't just create content — we build experiences. Creative Agency & Film Production House driven by vision and storytelling.",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
